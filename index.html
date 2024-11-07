@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>landing page</title>
+    <style>
+        * {
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+            /* font-family: gilroy; */
+        }
+
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            background-color: rgb(255, 255, 255);
+
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            height: 80px;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            gap: 200px;
+            padding: 0 25px;
+            z-index: 99;
+            /* border-bottom: 1px solid rgba(0, 0, 0, 0.158); */
+        }
+
+        .logo {
+            /* background-color: azure; */
+            text-transform: capitalize;
+        }
+
+        .logo h2 {
+            font-size: 40px;
+            transition: all ease .5s;
+            cursor: pointer;
+            color: black;
+            font-weight: 500;
+        }
+
+        .logo h2:hover {
+            scale: .9;
+            color: rgba(0, 0, 0, 0.61);
+        }
+
+        .logo h2 #dot {
+            color: rgb(211, 60, 60);
+            font-weight: 600;
+        }
+
+        .item1 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 60px;
+            padding: 5px;
+            height: 100%;
+        }
+
+        .item1 a {
+            text-decoration: none;
+            color: rgba(0, 0, 0, 0.733);
+        }
+
+        .item1 a h3 {
+            text-transform: capitalize;
+            font-size: 18px;
+            transition: all ease .2s;
+
+        }
+
+        .item1 a h3 span {
+            font-size: 20px;
+            color: rgb(211, 60, 60);
+            font-weight: 600;
+        }
+
+        .item1 a>h3:hover {
+            border-bottom: 2px solid rgb(211, 60, 60);
+            scale: 1.1;
+            color: rgb(211, 60, 60);
+            font-weight: 500;
+        }
+
+        .cont {
+            /* display: flex;
+         align-items: center; */
+            margin-top: 10px;
+            padding: 8px 15px;
+            border: 1px solid rgb(211, 60, 60);
+            border-radius: 10px;
+            outline: none;
+            text-decoration: none;
+            /* margin-left: 30px; */
+            /* background-color: wheat; */
+        }
+
+        .cont h3 {
+            text-decoration: none;
+            text-transform: capitalize;
+            color: black;
+        }
+
+        .cont a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .cont:hover {
+            transition: all .5s;
+            background-color: rgb(211, 60, 60);
+            cursor: pointer;
+        }
+
+        .cont:hover>a>h3 {
+            color: rgb(255, 255, 255);
+            /* background-color: rgb(211, 60, 60); */
+            text-decoration: none;
+            transition: all .5s;
+        }
+
+        .cont:hover>a>h3>#dot {
+            color: rgb(255, 255, 255);
+            /* background-color: rgb(211, 60, 60); */
+            text-decoration: none;
+            transition: all .5s;
+        }
+
+        .main {
+            padding-top: 15vh;
+            height: 100vh;
+            width: 100vw;
+            position: absolute;
+            /* background-color: aqua; */
+        }
+
+        .main h3 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            letter-spacing: 1px;
+            margin-top: 10px;
+            text-transform: capitalize;
+            font-weight: 500;
+            font-size: 20px;
+            height: 30px;
+            color: rgb(211, 60, 60);
+            font-weight: 600;
+
+        }
+
+        .content-img {
+            display: flex;
+            justify-content: space-around;
+            gap: 30px;
+            /* margin: 20px 50px; */
+            margin-top: 25px;
+            margin-left: 100px;
+            padding: 10px;
+        }
+
+        .content-img img {
+            height: 350px;
+            object-fit: cover;
+            width: 650px;
+        }
+
+        .overview {
+            width: 500px;
+            margin: 0px 100px;
+            text-align: center;
+        }
+
+        #dot {
+            color: rgb(211, 60, 60);
+            font-weight: 600;
+        }
+
+        .overview h2 {
+            margin-top: 10px;
+            font-weight: 500;
+            font-size: 40px;
+            text-transform: capitalize;
+
+
+        }
+
+        .overview p {
+            line-height: 24px;
+            font-size: 16px;
+            letter-spacing: 1px;
+            margin-top: 30px;
+        }
+
+        button {
+            margin-top: 30px;
+            padding: 8px 12px;
+            border: 1px solid rgb(211, 60, 60);
+            border-radius: 10px;
+            outline: none;
+            margin-left: 30px;
+            background-color: rgb(255, 255, 255);
+        }
+
+        button a {
+            text-transform: capitalize;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 600;
+            color: rgb(211, 60, 60);
+            background-color: rgb(255, 255, 255);
+        }
+
+        button:hover {
+            transition: all .5s;
+            background-color: rgb(211, 60, 60);
+        }
+
+        button:hover>a {
+            color: rgb(255, 255, 255);
+            background-color: rgb(211, 60, 60);
+            text-decoration: none;
+            transition: all .5s;
+        }
+
+        .btn2 {
+            padding: 8px 15px;
+        }
+
+        footer {
+            position: absolute;
+            bottom: 0;
+            height: 70px;
+            border-top: 1px solid rgba(114, 111, 111, 0.37);
+            width: 100%;
+            /* background-color: rgb(163, 54, 54); */
+            color: black;
+        }
+
+        .foot-main {
+            text-align: center;
+        }
+
+        .foot-main h4 {
+            padding-top: 5px;
+            padding-bottom: 5px;
+            font-size: 17px;
+            text-transform: capitalize;
+            word-spacing: 2px;
+            letter-spacing: 2px;
+            /* margin-bottom: 3px; */
+        }
+
+        .foot-main .info {
+            padding-top: 5px;
+            display: flex;
+            justify-content: center;
+            /* background-color: antiquewhite; */
+            margin-bottom: 10px;
+        }
+
+        .foot-main h5 {
+            margin-bottom: 10px;
+            display: flex;
+            margin-left: 100px;
+            align-items: center;
+            text-align: center;
+            font-size: 16px;
+            font-weight: 500;
+            color: rgba(0, 0, 0, 0.842);
+        }
+
+        .foot-main h5 a {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            color: rgba(0, 0, 0, 0.925);
+            text-decoration: none;
+        }
+
+        .foot-main p {
+            font-size: 15px;
+        }
+
+
+        ::selection {
+            color: aliceblue;
+            background-color: rgb(211, 60, 60);
+        }
+
+        /* #cursor {
+            height: 20px;
+            width: 20px;
+            background-color: rgb(255, 192, 203);
+            position: fixed;
+            border-radius: 50%;
+            font-size: 4px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            z-index: 9;
+        } */
+        /* .cursor{
+        position: fixed;
+        height: 20px;
+        width: 20px;
+        background-color: rgb(211, 60, 60);
+        border-radius: 50%;
+
+       }
+       .main{
+        position: absolute;
+       } */
+    </style>
+</head>
+<!-- <body>
+    <div class="main"> -->
+<header>
+    <div class="logo">
+        <h2><span id="dot">smart</span>Tech<span id="dot">.</span></h2>
+    </div>
+    <div class="item1">
+        <a href="index.html">
+            <h3><span id="dot">h</span>ome</h3>
+        </a>
+        <a href="#" target="_blank">
+            <h3><span id="dot">s</span>ervices</h3>
+        </a>
+        <a href="#" target="_blank">
+            <h3><span id="dot">a</span>bout</h3>
+        </a>
+        <a href="#" target="_blank">
+            <h3><span id="dot">c</span>areer</h3>
+        </a>
+
+    </div>
+    <div class="cont">
+        <a href="contact.html" target="_blank">
+            <h3><span id="dot">c</span>ontact</h3>
+        </a>
+    </div>
+</header>
+<div class="main">
+    <!-- <div id="cursor">
+    </div> -->
+    <h3 id="head">web developement intrenship opportunities at smart Tech. </h3>
+    <div class="content-img">
+        <img src="stdy img.jpeg" alt="">
+
+        <div class="overview">
+
+            <h2><span id="dot">O</span>verview</h2>
+            <p>Welcome to our internship program! <br> This overview serves as a concise introduction to what you
+                can expect during your time with us.
+                Our internship program typically last 1 month, giving you sample time to immerse yourself in the
+                work environment and gain valuable experience. For benefits of internship are learn to how
+                work in the companies then after completed then your confidence to be boosted. <br>
+                <span>Easy to apply here :</span>
+            </p>
+            <button id="btn"><a href="http://localhost/MINI%20PROJECT/signupht.php" target="_blank">signup</a></button>
+            <button id="btn" class="btn2"><a href="http://localhost/MINI%20PROJECT/loginht.php"
+                    target="_blank">login</a></button>
+        </div>
+
+    </div>
+    <footer>
+        <div class="foot-main">
+            <h4><span id="dot">C</span>ontact Us</h4>
+            <div class="info">
+                <h5>
+                    <a href="">
+                        <img src="mobile-solid.svg" alt=""> <span id="dot">P</span>hone : +91-xxx-xxx-xxxx</a>
+                </h5>
+                <h5><a href=""><img src="envelope-regular.svg" alt=""> <span id="dot">E</span>-Mail :
+                        smarttech8349@gmail.com</a>
+                </h5>
+                <h5><a href="https://www.linkedin.com/in/reetesh-prajapati-b44469254" target="_blank"><img
+                            src="linkedin.svg" alt=""><span id="dot">L</span>inkedin : Smart Tech</a></h5>
+                <h5>
+                    <p>&copy copyright 2024</p>
+                </h5>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<!-- <div class="cursor"></div>
+</div> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+    integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="index.js"></script>
+</body>
+
+</html>
